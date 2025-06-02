@@ -123,7 +123,7 @@ class SimpleRateLimiterTest:
         try:
             response = requests.get(f"{self.base_url}/", timeout=5)
             if response.status_code == 200:
-                print("✅ FastAPI server is running")
+                print("✅ FastAPI server is running")  
                 return True
             else:
                 print(f"❌ Server responded with status {response.status_code}")
@@ -139,7 +139,7 @@ class SimpleRateLimiterTest:
             response = requests.get(f"{self.base_url}/api/status")
             if response.status_code == 200:
                 data = response.json()
-                print("\n📊 Current Rate Limit Status:")
+                print("\n📊 Current Rate Limit Status:") # test step ### (2)
                 print("-" * 30)
                 
                 status = data.get('rate_limit_status', {})
@@ -154,7 +154,7 @@ class SimpleRateLimiterTest:
     
     def run_all_tests(self):
         """Run all tests"""
-        print("🔧 FastAPI Rate Limiter Test Suite")
+        print("🔧 FastAPI Rate Limiter Test Suite") # test starts with step ### (1)
         print("=" * 60)
         
         # Check server status first
