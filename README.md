@@ -6,10 +6,12 @@ A simple limiter in FastAPI to test rate limits of endpoints.
 
 ## Usage in VS Code – Python:
 - Install dependencies: ```pip install fastapi uvicorn```
-- Run with: ```python main.py``` or ```uvicorn main:app --reload```
+- Run with:  ```uvicorn main:app --reload```
 - Test the endpoints and observe rate limiting in action
 
 The rate limiter handles proxy headers (X-Forwarded-For, X-Real-IP) for proper IP detection behind reverse proxies, and returns proper HTTP 429 responses when limits are exceeded.
+
+Listening on port ```http://127.0.0.1:8000/docs```
 
 ## Test – Python (uses requests library)
 
