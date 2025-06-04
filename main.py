@@ -151,7 +151,7 @@ async def root():
 
 @app.get("/api/data")
 async def get_data(request: Request, _: bool = Depends(rate_limit(default_limiter))):
-    """Standard endpoint with default rate limiting (60 req/min, burst of 10)"""
+    """Standard endpoint with default rate limiting (6 req/min, burst of 10)"""
     return {
         "message": "This is rate limited data",
         "timestamp": time.time(),
@@ -160,7 +160,7 @@ async def get_data(request: Request, _: bool = Depends(rate_limit(default_limite
 
 @app.get("/api/premium")
 async def premium_endpoint(request: Request, _: bool = Depends(rate_limit(strict_limiter))):
-    """Premium endpoint with strict rate limiting (20 req/min, burst of 5)"""
+    """Premium endpoint with strict rate limiting (2 req/min, burst of 5)"""
     return {
         "message": "This is premium content with strict rate limiting",
         "timestamp": time.time(),
